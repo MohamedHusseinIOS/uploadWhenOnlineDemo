@@ -35,6 +35,10 @@
 		671F99FF240FA48F008DFB6C /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671F99FE240FA48F008DFB6C /* GalleryViewModel.swift */; };
 		671F9A01240FAA0B008DFB6C /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671F9A00240FAA0B008DFB6C /* ImageModel.swift */; };
 		671F9A052410074D008DFB6C /* UploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671F9A042410074D008DFB6C /* UploadResponse.swift */; };
+		845FB0172411161500083626 /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845FB0162411161500083626 /* GalleryCell.xib */; };
+		845FB0192411165000083626 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB0182411165000083626 /* GalleryCell.swift */; };
+		845FB01B2411175A00083626 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB01A2411175A00083626 /* UIView+Extension.swift */; };
+		845FB01D24113DDE00083626 /* DataManager+InternetReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB01C24113DDE00083626 /* DataManager+InternetReachability.swift */; };
 		D68F7E318026E73552ACE61E /* libPods-UploadingWhenOnlineDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99345ACE94C5E66559E7C8AE /* libPods-UploadingWhenOnlineDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,10 @@
 		671F9A00240FAA0B008DFB6C /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		671F9A042410074D008DFB6C /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		79A32586113B89018F7B033A /* Pods-UploadingWhenOnlineDemo-UploadingWhenOnlineDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadingWhenOnlineDemo-UploadingWhenOnlineDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-UploadingWhenOnlineDemo-UploadingWhenOnlineDemoUITests/Pods-UploadingWhenOnlineDemo-UploadingWhenOnlineDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		845FB0162411161500083626 /* GalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
+		845FB0182411165000083626 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		845FB01A2411175A00083626 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		845FB01C24113DDE00083626 /* DataManager+InternetReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+InternetReachability.swift"; sourceTree = "<group>"; };
 		99345ACE94C5E66559E7C8AE /* libPods-UploadingWhenOnlineDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UploadingWhenOnlineDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B4D797F4583B97640749FB /* Pods-UploadingWhenOnlineDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadingWhenOnlineDemo.debug.xcconfig"; path = "Target Support Files/Pods-UploadingWhenOnlineDemo/Pods-UploadingWhenOnlineDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B4B98F165EBA825F0C9F4F0E /* Pods-UploadingWhenOnlineDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadingWhenOnlineDemoTests.release.xcconfig"; path = "Target Support Files/Pods-UploadingWhenOnlineDemoTests/Pods-UploadingWhenOnlineDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 		671F99C0240F93C1008DFB6C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				845FB015241115E900083626 /* Cells */,
 				671F99F9240FA349008DFB6C /* BaseViewController.swift */,
 				671F9993240F93AC008DFB6C /* ViewController.swift */,
 				671F99FB240FA473008DFB6C /* GalleryViewController.swift */,
@@ -249,6 +258,7 @@
 		671F99C4240F948D008DFB6C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				845FB01A2411175A00083626 /* UIView+Extension.swift */,
 				671F99C5240F948D008DFB6C /* DataResponse+Extension.swift */,
 				671F99CA240F948D008DFB6C /* UIViewController+Extension.swift */,
 				671F99CD240F948D008DFB6C /* Data+Extension.swift */,
@@ -270,8 +280,18 @@
 			isa = PBXGroup;
 			children = (
 				671F99E0240F94D6008DFB6C /* DataManager.swift */,
+				845FB01C24113DDE00083626 /* DataManager+InternetReachability.swift */,
 			);
 			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		845FB015241115E900083626 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				845FB0162411161500083626 /* GalleryCell.xib */,
+				845FB0182411165000083626 /* GalleryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C88DBCFB13CC2E8A3F843817 /* Pods */ = {
@@ -396,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845FB0172411161500083626 /* GalleryCell.xib in Resources */,
 				671F999C240F93AD008DFB6C /* LaunchScreen.storyboard in Resources */,
 				671F9999240F93AD008DFB6C /* Assets.xcassets in Resources */,
 				671F9997240F93AC008DFB6C /* Main.storyboard in Resources */,
@@ -528,6 +549,7 @@
 			files = (
 				671F99D4240F948D008DFB6C /* UIViewController+Extension.swift in Sources */,
 				671F99E9240F94D6008DFB6C /* DataManager.swift in Sources */,
+				845FB0192411165000083626 /* GalleryCell.swift in Sources */,
 				671F99F0240F94D6008DFB6C /* URLs.swift in Sources */,
 				671F99CF240F948D008DFB6C /* DataResponse+Extension.swift in Sources */,
 				671F99EF240F94D6008DFB6C /* Decoderable.swift in Sources */,
@@ -535,10 +557,12 @@
 				671F99F8240F9CA6008DFB6C /* ViewModel.swift in Sources */,
 				671F99FA240FA349008DFB6C /* BaseViewController.swift in Sources */,
 				671F99F6240F962A008DFB6C /* ViewModelType.swift in Sources */,
+				845FB01B2411175A00083626 /* UIView+Extension.swift in Sources */,
 				671F9994240F93AC008DFB6C /* ViewController.swift in Sources */,
 				671F99FF240FA48F008DFB6C /* GalleryViewModel.swift in Sources */,
 				671F9A01240FAA0B008DFB6C /* ImageModel.swift in Sources */,
 				671F99D7240F948D008DFB6C /* Data+Extension.swift in Sources */,
+				845FB01D24113DDE00083626 /* DataManager+InternetReachability.swift in Sources */,
 				671F99DB240F94C8008DFB6C /* ErrorModel.swift in Sources */,
 				671F9990240F93AC008DFB6C /* AppDelegate.swift in Sources */,
 				671F99E8240F94D6008DFB6C /* NetworkManager.swift in Sources */,

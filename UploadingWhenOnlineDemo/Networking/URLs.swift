@@ -10,7 +10,7 @@ import Foundation
 
 enum URLs: String {
     
-    case UploadImage = "image"
+    case Image = "image"
     
     var mainURL: String {
       return "https://api.imgur.com/3/"

@@ -51,7 +51,7 @@ class NetworkManager {
     
     func get(url: String, paramters: Parameters? = nil, completion: @escaping responseCallback){
         
-        AF.request(url, method: .get, parameters: paramters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        AF.request(url, method: .get, parameters: paramters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             response.interceptResuest(url, paramters)
             self.handleResponse(response, completion: completion)
         }

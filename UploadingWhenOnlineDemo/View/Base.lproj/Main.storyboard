@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="vCF-ne-yiQ">
             <objects>
-                <viewController id="Hsj-i8-ezV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryViewController" id="Hsj-i8-ezV" customClass="GalleryViewController" customModule="UploadingWhenOnlineDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W0r-Jx-kCn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rgx-u8-eMF"/>
                     </view>
+                    <connections>
+                        <outlet property="galleryCollectionView" destination="vvL-Bj-gI8" id="Cxd-4s-Lmg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7g-ZY-gWv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

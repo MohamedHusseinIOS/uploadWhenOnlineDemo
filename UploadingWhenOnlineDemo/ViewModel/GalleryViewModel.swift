@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import Alamofire
 
 
 class GalleryViewModel: BaseViewModel, ViewModelType{
@@ -18,10 +20,15 @@ class GalleryViewModel: BaseViewModel, ViewModelType{
     let input: GalleryViewModel.Input
     let output: GalleryViewModel.Output
     
+    private let imagesDataSubj = PublishSubject<[Data]>()
+    private let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
+    
     override init() {
         input = Input()
         output = Output()
         super.init()
-        
     }
+    
+    
+    
 }

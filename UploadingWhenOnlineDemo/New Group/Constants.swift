@@ -10,16 +10,10 @@ import Foundation
 import UIKit
 
 enum Constants: String{
-    case font = "DINNextLTW23-Regular"
     case AppleLanguages
-    case accessToken
-    case enviroment
-    case currentUser
-    case categories
-    case googleAPIKey = "AIzaSyA6jtedC506eRoP4JIy5QxYP--4L4KqYzQ"
     case imagesArray
     case imageCounter
-    
+    case imagesIds
 }
 
 enum AppLanguages: String{
