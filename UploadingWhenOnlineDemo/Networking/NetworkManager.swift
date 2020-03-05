@@ -2,8 +2,8 @@
 //  NetworkManager.swift
 //  etajerIOS
 //
-//  Created by mohamed on 7/29/19.
-//  Copyright © 2019 Maxsys. All rights reserved.
+//  Created by mohamed hussein on 3/4/20.
+//  Copyright © 2020 Mohamed Hussein. All rights reserved.
 //
 
 import Foundation
@@ -41,18 +41,17 @@ class NetworkManager {
     typealias responseCallback = ((ResponseEnum) -> Void)
     
     private var headers: HTTPHeaders {
-        guard let token = UserDefaults.standard.value(forKey: Constants.accessToken.rawValue) as? String else { return ["Accept-Language": AppUtility.shared.currentLang.rawValue] }
         let headerDict = [
-            "Authorization":"Bearer \(token)",
-            "Accept-Language": AppUtility.shared.currentLang.rawValue
-        ]
-        return headerDict
+                            "Content-Type":"application/json",
+                            "Authorization":"Client-ID cd46b63d6f0be95"
+                        ]
+        return HTTPHeaders(headerDict)
     }
     
     
     func get(url: String, paramters: Parameters? = nil, completion: @escaping responseCallback){
         
-        Alamofire.request(url, method: .get, parameters: paramters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        AF.request(url, method: .get, parameters: paramters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             response.interceptResuest(url, paramters)
             self.handleResponse(response, completion: completion)
         }
@@ -60,7 +59,7 @@ class NetworkManager {
     
     func post(url: String, paramters: Parameters?, completion: @escaping responseCallback){
         
-        Alamofire.request(url, method: .post, parameters: paramters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        AF.request(url, method: .post, parameters: paramters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             response.interceptResuest(url, paramters)
             DispatchQueue.main.async {
                  self.handleResponse(response, completion: completion)
@@ -68,7 +67,7 @@ class NetworkManager {
         }
     }
     
-    private func handleResponse(_ response: DataResponse<Any>, completion: @escaping responseCallback) {
+    private func handleResponse(_ response: AFDataResponse<Any>, completion: @escaping responseCallback) {
         guard let code = response.response?.statusCode else {
             completion(.failure(ApiError.ClientSideError, nil))
             return

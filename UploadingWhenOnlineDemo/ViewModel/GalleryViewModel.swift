@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+
+class GalleryViewModel: BaseViewModel, ViewModelType{
+    
+    struct Input {}
+    
+    struct Output {}
+    
+    let input: GalleryViewModel.Input
+    let output: GalleryViewModel.Output
+    
+    override init() {
+        input = Input()
+        output = Output()
+        super.init()
+        
+    }
+}

@@ -2,8 +2,8 @@
 //  ErrorModel.swift
 //  etajerIOS
 //
-//  Created by mohamed on 7/30/19.
-//  Copyright © 2019 Maxsys. All rights reserved.
+//  Created by mohamed hussein on 3/3/20.
+//  Copyright © 2020 Mohamed Hussein. All rights reserved.
 //
 
 import Foundation

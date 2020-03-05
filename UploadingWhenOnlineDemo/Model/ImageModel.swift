@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct ImageModel: BaseModel {
+    let imageURL: URL?
+    let imageName: String?
+    let imageData: Data?
+}

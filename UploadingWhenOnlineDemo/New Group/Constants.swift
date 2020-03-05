@@ -2,8 +2,8 @@
 //  Constants.swift
 //  etajerIOS
 //
-//  Created by mohamed on 7/7/19.
-//  Copyright © 2019 Maxsys. All rights reserved.
+//  Created by mohamed hussein on 3/3/20.
+//  Copyright © 2020 Mohamed Hussein. All rights reserved.
 //
 
 import Foundation
@@ -17,6 +17,8 @@ enum Constants: String{
     case currentUser
     case categories
     case googleAPIKey = "AIzaSyA6jtedC506eRoP4JIy5QxYP--4L4KqYzQ"
+    case imagesArray
+    case imageCounter
     
 }
 

@@ -1,0 +1,6 @@
+module Pods_UploadingWhenOnlineDemo {
+  umbrella header "Pods-UploadingWhenOnlineDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
