@@ -15,7 +15,9 @@ class GalleryViewModel: BaseViewModel, ViewModelType{
     
     struct Input {}
     
-    struct Output {}
+    struct Output {
+        let imagesData: Observable<[Data]>
+    }
     
     let input: GalleryViewModel.Input
     let output: GalleryViewModel.Output
@@ -25,7 +27,7 @@ class GalleryViewModel: BaseViewModel, ViewModelType{
     
     override init() {
         input = Input()
-        output = Output()
+        output = Output(imagesData: imagesDataSubj.asObservable())
         super.init()
     }
     

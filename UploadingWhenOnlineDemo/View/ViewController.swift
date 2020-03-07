@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: BaseViewController {
 
+    @IBOutlet weak var openGalleryBtn: UIButton!
     
     let viewModel = ViewModel()
     let imagePicker = UIImagePickerController()
@@ -31,6 +32,10 @@ class ViewController: BaseViewController {
 
     @IBAction func takePhotoTapped(_ sender: Any) {
         openImagePicker()
+    }
+    
+    @IBAction func openGalleryTapped(_ sender: Any) {
+        
     }
     
 }

@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Open Gallery"/>
                                 <connections>
-                                    <action selector="takePhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKe-pk-I6i"/>
+                                    <action selector="openGalleryTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVx-YI-f14"/>
                                 </connections>
                             </button>
                         </subviews>

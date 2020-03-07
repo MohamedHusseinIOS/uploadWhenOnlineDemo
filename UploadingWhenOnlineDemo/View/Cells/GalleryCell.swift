@@ -12,4 +12,6 @@ class GalleryCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    static let id = "GalleryCell"
+    
 }
