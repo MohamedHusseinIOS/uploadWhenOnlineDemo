@@ -35,7 +35,9 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func openGalleryTapped(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(identifier: "GalleryViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -58,7 +60,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        
         if let error = error {
             // we got back an error!
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)

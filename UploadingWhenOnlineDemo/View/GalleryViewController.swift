@@ -8,6 +8,7 @@
 
 import UIKit
 import RxCocoa
+import Kingfisher
 
 class GalleryViewController: BaseViewController {
 
@@ -18,11 +19,12 @@ class GalleryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewModel.getGalleryImages()
     }
     
     override func configureUI() {
-        
+        registerCell()
+        setupCollectionView()
     }
     
     func registerCell(){
@@ -31,8 +33,7 @@ class GalleryViewController: BaseViewController {
     }
     
     func setupCollectionView(){
-        galleryCollectionView.delegate = nil
-        galleryCollectionView.dataSource = nil
+
         
         let flowLayout = UICollectionViewFlowLayout()
         let width = (UIScreen.main.bounds.width - CGFloat(10)) / CGFloat(2)
@@ -53,11 +54,23 @@ class GalleryViewController: BaseViewController {
                 let index = IndexPath(item: item, section: 0)
                 return self.cellForIndex(index: index, collectionView: collectionView, model: element)
         }.disposed(by: viewModel.bag)
+        
+//        viewModel.output
+//            .imagesLinks
+//            .bind(to: galleryCollectionView.rx.items){ collectionView, item, element in
+//                let index = IndexPath(item: item, section: 0)
+//                return self.cellForIndex(index: index, collectionView: collectionView, model: element)
+//        }.disposed(by: viewModel.bag)
     }
     
-    func cellForIndex(index: IndexPath, collectionView: UICollectionView, model: Data) -> GalleryCell {
+    func cellForIndex(index: IndexPath, collectionView: UICollectionView, model: Any) -> GalleryCell {
         guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCell.id, for: index) as? GalleryCell else { return GalleryCell() }
+        if let imageUrl = model as? String, let url = URL(string: imageUrl){
+            cell.imageView.kf.setImage(with: url)
+        } else if let imageData = model as? Data {
+            cell.imageView.image = UIImage(data: imageData)
+        }
         return cell
     }
-    
 }
+

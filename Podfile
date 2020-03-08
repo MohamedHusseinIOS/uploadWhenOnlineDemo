@@ -8,6 +8,7 @@ target 'UploadingWhenOnlineDemo' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'Alamofire'
   pod 'SVProgressHUD'
+  pod 'Kingfisher', '~> 5.0'
 
   # Pods for UploadingWhenOnlineDemo
 

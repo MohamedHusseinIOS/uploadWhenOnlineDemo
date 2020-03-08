@@ -10,7 +10,8 @@ import Foundation
 
 struct UploadResponse: BaseModel {
     let data: DataClass?
-    let status, success: Int?
+    let status: Int?
+    let success: Bool?
 }
 
 // MARK: - DataClass
@@ -19,17 +20,22 @@ struct DataClass: BaseModel {
     let accountURL: String?
     let adType: Int?
     let adURL: String?
-    let animated, bandwidth: Int?
-    let datetime, deletehash, dataDescription: String?
-    let edited, favorite, hasSound, height: Int?
+    let animated: Bool?
+    let bandwidth: Double?
+    let datetime: Int?
+    let deletehash, dataDescription: String?
+    let edited: String?
+    let favorite: Bool?
+    let hasSound: Bool?
+    let height: Double?
     let id: String?
-    let inGallery, inMostViral, isAd: Int?
+    let inGallery, inMostViral, isAd: Bool?
     let link: String?
-    let name, nsfw, section: String?
+    let name, section: String?
     let size: Int?
     let tags: [String]?
     let title, type: String?
     let views: Int?
     let vote: String?
-    let width: Int?
+    let width: Double?
 }

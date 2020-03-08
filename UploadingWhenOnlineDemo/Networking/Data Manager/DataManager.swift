@@ -31,7 +31,6 @@ class DataManager {
     }
     
     func uploadImage(images: Array<ImageModel>) -> Observable<Any> {
-        
         let observable = Observable<Any>.create { (observer) -> Disposable in
             let group = DispatchGroup()
             var groupResponse = Array<UploadResponse>()
@@ -71,8 +70,8 @@ class DataManager {
             var imagesResponse = Array<Any>()
             ids.forEach { (id) in
                 group.enter()
-                let parameters = ["imageHash":id]
-                NetworkManager.shared.get(url: URLs.Image.rawValue, paramters: parameters) { (response) in
+                let url = URLs.Image.URL + "/\(id)"
+                NetworkManager.shared.get(url: url) { (response) in
                     let resEnum = self.handelResponseData(response: response, model: UploadResponse.self)
                     switch resEnum {
                     case .success(let value):

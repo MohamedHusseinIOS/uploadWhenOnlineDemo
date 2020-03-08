@@ -14,9 +14,9 @@ extension DataManager {
     
     func getGallery() -> Observable<Any> {
         if (self.reachapiltyManager?.isReachable ?? false), let ids = UserDefaults.standard.array(forKey: Constants.imagesIds.rawValue) as? [String] {
-            return getImages(ids: ids)
+            return getImages(ids: ids).asObservable()
         } else {
-            return getImagesArray()
+            return getImagesArray().asObservable()
         }
     }
     

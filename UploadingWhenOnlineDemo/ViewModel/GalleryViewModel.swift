@@ -16,14 +16,13 @@ class GalleryViewModel: BaseViewModel, ViewModelType{
     struct Input {}
     
     struct Output {
-        let imagesData: Observable<[Data]>
+        let imagesData: Observable<[Any]>
     }
     
     let input: GalleryViewModel.Input
     let output: GalleryViewModel.Output
     
-    private let imagesDataSubj = PublishSubject<[Data]>()
-    private let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
+    private let imagesDataSubj = PublishSubject<[Any]>()
     
     override init() {
         input = Input()
@@ -31,6 +30,15 @@ class GalleryViewModel: BaseViewModel, ViewModelType{
         super.init()
     }
     
-    
+    func getGalleryImages(){
+        DataManager.shared.getGallery().subscribe { (event) in
+            if let imagesArr = event.element as? [UploadResponse] {
+                let imagesLinksArr = imagesArr.compactMap({$0.data?.link})
+                self.imagesDataSubj.onNext(imagesLinksArr)
+            } else if let imagesDataArr = event.element as? [Data] {
+                self.imagesDataSubj.onNext(imagesDataArr)
+            }
+        }.disposed(by: bag)
+    }
     
 }
