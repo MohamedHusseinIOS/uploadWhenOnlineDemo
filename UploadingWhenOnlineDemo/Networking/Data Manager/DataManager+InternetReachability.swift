@@ -53,7 +53,7 @@ extension DataManager {
         }.disposed(by: bag)
     }
     
-    private func saveIdsInUserDefualts(ids: Array<String>){
+    func saveIdsInUserDefualts(ids: Array<String>){
         var imagesIds = Array<String>()
         if let ids = UserDefaults.standard.array(forKey: Constants.imagesIds.rawValue) as? [String] {
             imagesIds.append(contentsOf: ids)

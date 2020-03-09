@@ -14,6 +14,7 @@ enum Constants: String{
     case imagesArray
     case imageCounter
     case imagesIds
+    case uploadPhotos = "com.demo.uploadPhotos"
 }
 
 enum AppLanguages: String{

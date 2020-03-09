@@ -30,7 +30,7 @@ class DataManager {
         }
     }
     
-    func uploadImage(images: Array<ImageModel>) -> Observable<Any> {
+     func uploadImage(images: Array<ImageModel>) -> Observable<Any> {
         let observable = Observable<Any>.create { (observer) -> Disposable in
             let group = DispatchGroup()
             var groupResponse = Array<UploadResponse>()
